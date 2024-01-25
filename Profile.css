@@ -54,3 +54,7 @@ body{
 .icons:hover{
     transform: scale(1.2);
 }
+.content{
+    width: 63.5%;
+    margin: 7% 0 3% 0;
+}

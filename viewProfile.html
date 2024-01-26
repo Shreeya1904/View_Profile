@@ -1,35 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Profile.css">
-    <link rel="icon" href="./Images/LogoBGRemove.png" sizes="16x16">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Profile.css" />
+    <link rel="icon" href="./Images/LogoBGRemove.png" sizes="16x16" />
     <title>Campus Collaborate</title>
 </head>
+
 <body>
-<div class="Wrapper">
-<div class="aside">
-        <div>
-        <div style="background-color: white;"><img src="./Images/LogoName.png" class="logo"></div>
-        <div class="Item"><a href="" class="link">Home</a></div>
-        <div class="Item"><a href="" class="link">Course</a></div>
-        <div class="Item"><a href="" class="link">Help</a></div>
-        <div class="Item"><a href="" class="link">Top Rated Project</a></div>
-        <div class="Item"><a href="viewProfile.html" class="link">My Profile</a></div>
+    <div class="Wrapper">
+        <div class="aside">
+            <div>
+                <div style="background-color: white">
+                    <img src="./Images/LogoName.png" class="logo" />
+                </div>
+                <div class="Item"><a href class="link">Home</a></div>
+                <div class="Item"><a href class="link">Course</a></div>
+                <div class="Item"><a href class="link">Help</a></div>
+                <div class="Item"><a href class="link">Top Rated
+                        Project</a></div>
+                <div class="Item">
+                    <a href="viewProfile.html" class="link">My Profile</a>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="subitem"><a href class="link">About us</a></div>
+            </div>
         </div>
-    <div class="bottom">
-            <div class="subitem"><a href="" class="link">About us</a></div>
+        <div class="content">
+            <div class="basicinformation">
+                <div class="profileimagelarge">
+                    <button id="openDialog">
+                        <img src="./Images/Profileimg.png" id="mainIamge" class="imageprofile" />
+                    </button>
+                    <div id="Changeimg" class="change-img">
+                        <div class="dialog-content">
+                            <span id="closeDialog" class="close">x</span>
+                            <div class="close-dialog-content">
+                                <div>Profile Photo</div>
+                                <div style="text-align: center">
+                                    <img src="./Images/Profileimg.png" id="mainIamge1" class="imageprofileinside" />
+                                </div>
+                                <div style="display: flex" class="editdelete">
+                                    <div>
+                                        <label for="imageInput">
+                                            <button onclick="UpdateImage()">
+                                                <img src="./Images/Edit.png" class="edit" />
+                                            </button>
+                                        </label>
+                                        <input type="file" id="imageInput" accept="image/*" onchange="changeImage()" />
+                                    </div>
+                                    <div>
+                                        <button id="deleteButton" onclick="changeImage()">
+                                            <img src="./Images/Delete.png" class="Delete" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Info">
+                    <div class="nameprofile">Shreeya Gupta</div>
+                    <div class="RollNo">220102092</div>
+                    <div class="major">
+                        B.Tech - Electronics and Communication Engineering
+                    </div>
+                    <div class="minor">Minor in Computer Science and
+                        Engineering</div>
+                    <div class="outlook">g.shreeya@iitg.ac.in</div>
+                    <div class="phoneNo">+91 6267650792</div>
+                </div>
+                <div>
+                    <div class="editdetails"><img src="./Images/Edit.png" class="edit"></div>
+                </div>
+            </div>
+            <div class="POR">
+                <div class="porheading">Position of Responsibility</div>
+                <div id="por-club">
+                    <ul>
+                        <li>
+                            <div class="name">Coding Club - Head</div>
+                            <div class="deleteitem">X</div>
+                        </li>
+                        <li>
+                            <div class="name">E-cell - Senior Executive</div>
+                            <div class="deleteitem">X</div>
+                        </li>
+                        <li>
+                            <div class="name">SWC - Senior Executive</div>
+                            <div class="deleteitem">X</div>
+                        </li>
+                    </ul>
+                </div>
+                <form id="add-por">
+                    <input type="text" class="custom-input" placeholder="Club- Position of Responsibility" />
+                    <button onclick="processInput()"><div class="addbutton">+</div></button>
+                </form>
+            </div>
+        </div>
+        <div class="iconbar">
+            <div>
+                <a href class="link"><img src="./Images/Message.png" class="icons" /></a>
+            </div>
+            <div>
+                <a href="viewProfile.html" class="link"><img src="./Images/ProfileImage.png" id="profileid"
+                        class="icons" /></a>
+            </div>
+            <div>
+                <a href class="link"><img src="./Images/Logout.png" class="icons" /></a>
+            </div>
+        </div>
     </div>
-</div>
-<div class="content">
-    
-</div>
-<div class="iconbar">
-    <div><a href="" class="link"><img src="./Images/Message.png" class="icons"></a></div>
-    <div><a href="viewProfile.html" class="link"><img src="./Images/ProfileImage.png" id="profileid" class="icons"></a></div>
-    <div><a href="" class="link"><img src="./Images/Logout.png" class="icons"></a></div>
-</div>
-</div>
+    <script src="Profile.js"></script>
 </body>
+
 </html>

@@ -45,12 +45,12 @@
                                 </div>
                                 <div style="display: flex" class="editdelete">
                                     <div>
-                                        <label for="imageInput">
-                                            <button onclick="UpdateImage()">
-                                                <img src="./Images/Edit.png" class="edit" />
-                                            </button>
-                                        </label>
-                                        <input type="file" id="imageInput" accept="image/*" onchange="changeImage()" />
+                                        <form id="editimage">
+                                            <input type="file" id="imageInput" accept="image/*">
+                                                <button onclick="UpdateImage()">
+                                                    <img src="./Images/Edit.png" class="edit" />
+                                                </button>
+                                        </form>
                                     </div>
                                     <div>
                                         <button id="deleteButton" onclick="changeImage()">
@@ -97,7 +97,40 @@
                 </div>
                 <form id="add-por">
                     <input type="text" class="custom-input" placeholder="Club- Position of Responsibility" />
-                    <button onclick="processInput()"><div class="addbutton">+</div></button>
+                    <button onclick="processInput()">
+                        <div class="addbutton">+</div>
+                    </button>
+                </form>
+            </div>
+            <div class="Skill">
+                <div class="skillheading">Skills</div>
+                <div id="skilladd">
+                    <ul>
+                        <li>
+                            <div class="skillname">Web dev</div>
+                            <div class="deleteskill">X</div>
+                        </li>
+                        <li>
+                            <div class="skillname">App Dev</div>
+                            <div class="deleteskill">X</div>
+                        </li>
+                        <li>
+                            <div class="skillname">Consulting</div>
+                            <div class="deleteskill">X</div>
+                        </li>
+                    </ul>
+                </div>
+                <form id="add-skill">
+                    <select id="skilllist" name="skilllist">
+                        <option value="Null" selected>Choose an skill</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="App Development">App Development</option>
+                        <option value="Consulting">Consulting</option>
+                        <option value="Machine Learning">Machine Learning</option>
+                    </select>
+                    <button onclick="processInput()">
+                        <div class="addbuttonskill">+</div>
+                    </button>
                 </form>
             </div>
         </div>

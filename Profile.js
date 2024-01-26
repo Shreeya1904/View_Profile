@@ -7,25 +7,19 @@ document.getElementById("closeDialog").addEventListener("click", function () {
 });
 
 function changeImage() {
-  var preview = document.getElementById("mainIamge");
-  var previewimage = document.getElementById("mainIamge1")
+  const preview = document.getElementById("mainIamge");
+  const previewimage = document.getElementById("mainIamge1");
   preview.src = "./Images/ProfileImage.png";
   previewimage.src = "./Images/ProfileImage.png"
 }
 
-function UpdateImage() {
-  var input = input.value;
-  var preview = document.getElementById("mainImage");
-
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-
-    reader.onload = function () {
-      preview.src = reader.result;
-    };
-
-    reader.readAsDataURL(input.files[0]);
-  }
+function UpdateImage(){
+    const image = forms['editimage'].querySelector('input[type="file"]').value;
+    const preview = document.getElementById("mainIamge");
+    const previewimage = document.getElementById("mainIamge1");
+    preview.src = image;
+    previewimage.src = image;
+  
 }
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -46,16 +40,16 @@ document.addEventListener('DOMContentLoaded', function(){
     
     const value = addForm.querySelector('input[type="text"]').value;
     const li = document.createElement('li');
-    const bookName = document.createElement('div');
+    const porName = document.createElement('div');
     const deleteBtn = document.createElement('div');
 
-    bookName.textContent = value;
+    porName.textContent = value;
     deleteBtn.textContent = 'X';
 
-    bookName.classList.add('name');
+    porName.classList.add('name');
     deleteBtn.classList.add('deleteitem');
 
-    li.appendChild(bookName);
+    li.appendChild(porName);
     li.appendChild(deleteBtn);
     list.appendChild(li);
   });
@@ -63,4 +57,40 @@ document.addEventListener('DOMContentLoaded', function(){
 
 })
 
+
+
+document.addEventListener('DOMContentLoaded', function(){
+
+  const list = document.querySelector('#skilladd ul');
+  const forms = document.forms;
+  list.addEventListener('click', (e) => {
+    if(e.target.className == 'deleteskill'){
+      const li = e.target.parentElement;
+      li.parentNode.removeChild(li);
+    }
+  });
+
+  const addForm = forms['add-skill'];
+  addForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    
+    const value = addForm.querySelector('#skilllist').value;
+    const li = document.createElement('li');
+    const skillName = document.createElement('div');
+    const deleteBtn = document.createElement('div');
+
+    skillName.textContent = value;
+    deleteBtn.textContent = 'X';
+
+    skillName.classList.add('skillname');
+    deleteBtn.classList.add('deleteskill');
+
+    li.appendChild(skillName);
+    li.appendChild(deleteBtn);
+    list.appendChild(li);
+  });
+
+
+})
 
